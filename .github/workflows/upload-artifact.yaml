@@ -1,0 +1,17 @@
+name: file artifact demo
+
+on:
+  push:
+
+jobs:
+  upload-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create report 
+        run: echo "test passed"  > report.txt
+      
+      - name: upload file
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: report.txt
