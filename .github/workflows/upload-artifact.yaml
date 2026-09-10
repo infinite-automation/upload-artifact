@@ -15,3 +15,14 @@ jobs:
         with:
           name: test-report
           path: report.txt
+
+  download-report:
+    needs: upload-file
+    runs-on: ubuntu-latest
+    steps:
+      - name: download test report
+        uses: actions/download-artifact@v6
+        with:
+          name: test-report
+      - name: read report
+        run: car report.txt
