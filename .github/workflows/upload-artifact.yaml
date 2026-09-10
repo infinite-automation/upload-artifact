@@ -25,4 +25,4 @@ jobs:
         with:
           name: test-report
       - name: read report
-        run: car report.txt
+        run: cat report.txt
